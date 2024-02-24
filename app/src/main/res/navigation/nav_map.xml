@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_map"
+    app:startDestination="@id/itemFragment">
+
+    <fragment
+        android:id="@+id/itemFragment"
+        android:name="com.petersong.zhangdesong_newsapi.ui.home.ItemFragment"
+        android:label="ItemFragment" >
+        <action
+            android:id="@+id/action_itemFragment_to_sportsNewsFragment"
+            app:destination="@id/sportsNewsFragment" />
+        <action
+            android:id="@+id/action_itemFragment_to_businessNewsFragment"
+            app:destination="@id/businessNewsFragment" />
+        <action
+            android:id="@+id/action_itemFragment_to_newsDetailFragment"
+            app:destination="@id/newsDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sportsNewsFragment"
+        android:name="com.petersong.zhangdesong_newsapi.SportsNewsFragment"
+        android:label="SportsNewsFragment" >
+        <action
+            android:id="@+id/action_sportsNewsFragment_to_itemFragment"
+            app:destination="@id/itemFragment" />
+        <action
+            android:id="@+id/action_sportsNewsFragment_to_businessNewsFragment"
+            app:destination="@id/businessNewsFragment" />
+        <action
+            android:id="@+id/action_sportsNewsFragment_to_newsDetailFragment"
+            app:destination="@id/newsDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/businessNewsFragment"
+        android:name="com.petersong.zhangdesong_newsapi.BusinessNewsFragment"
+        android:label="BusinessNewsFragment" >
+        <action
+            android:id="@+id/action_businessNewsFragment_to_itemFragment"
+            app:destination="@id/itemFragment" />
+        <action
+            android:id="@+id/action_businessNewsFragment_to_sportsNewsFragment"
+            app:destination="@id/sportsNewsFragment" />
+        <action
+            android:id="@+id/action_businessNewsFragment_to_newsDetailFragment"
+            app:destination="@id/newsDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsDetailFragment"
+        android:name="com.petersong.zhangdesong_newsapi.NewsDetailFragment"
+        android:label="fragment_news_detail"
+        tools:layout="@layout/fragment_news_detail"
+        >
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="content"
+            app:argType="string" />
+        <argument
+            android:name="author"
+            app:argType="string" />
+    </fragment>
+</navigation>
